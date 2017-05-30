@@ -15,7 +15,7 @@ class Usuario {
 		$this->idusuario = $value;
 	}
 
-public function getDeslogin(){
+	public function getDeslogin(){
 		return $this->deslogin;
 	}
 
@@ -23,7 +23,7 @@ public function getDeslogin(){
 		$this->deslogin = $value;
 	}
 
-	public function getDessenha(){
+	public function getDessenha();{
 		return $this->dessenha;
 	}
 
@@ -58,28 +58,16 @@ public function loadById($id){
 		$this->setDessenha($row['dessenha']);
 		$this->setDtcadastro(new DateTime($row['dtcadastro']));
 
-
 	}
 
-public static function getList(){
+public static function getlist(){
 
 	$sql = new Sql();
-
-	return $sql->select("SELECT * FROM tb_usuarios ORDER BY deslogin;");
+	return $sql->select("SELECT * FROM tb_usuario ORDER BY deslogin;");
 
 	}
 
-	public static function search($Login){
-
-		$sql = new Sql();
-
-		return $sql->select("SELECT * FROM tb_usuarios WHERE deslogin LIKE :SEARCH ORDER BY deslogin", array(
-			':SEARCH'=>"%".$login."%"
-			));
-		
-	}
-
-	public function __toString(){
+public function __toString(){
 
 	return json_encode(array(
 
@@ -87,10 +75,12 @@ public static function getList(){
 		"deslogin"=>$this->getDeslogin(),
 		"dessenha"=>$this->getDessenha(),
 		"dtcadastro"=>$this->getDtcadastro()->format("d/m/Y H:i:s")
-		));
+		)
+	);
 
-	}
+}
 
+}
 }
 
 ?>

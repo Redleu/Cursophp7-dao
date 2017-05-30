@@ -14,7 +14,7 @@ class Sql extends PDO {
 
 		foreach ($parameters as $key => $value) {
 			
-			$stmt->setParam($key, $value);
+			$stmt->setParams($key, $value);
 
 		}
 
