@@ -74,7 +74,7 @@ public static function getList(){
 		$sql = new Sql();
 
 		return $sql->select("SELECT * FROM tb_usuarios WHERE deslogin LIKE :SEARCH ORDER BY deslogin", array(
-			':SEARCH'=>"%".$login."%"
+			':SEARCH'=>"%".$Login."%"
 			));
 
 	}
@@ -97,13 +97,14 @@ public function login($login, $password){
 		$this->setDessenha($row['dessenha']);
 		$this->setDtcadastro(new DateTime($row['dtcadastro']));
 
-		} else{
+		} else {
 
 			throw new Exception("Login e/ou senha inválidos.");
 			
 		}
 
-}
+		}
+
 	public function __toString(){
 
 	return json_encode(array(
