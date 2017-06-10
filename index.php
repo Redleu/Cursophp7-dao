@@ -11,7 +11,7 @@ require_once("config.php");
 //$root->loadbyID(1);
 //echo $root;
 
-//carrega uma lista de usuarios
+//carrega uma lista de usuários
 //$lista = Usuario::getList();
 //echo json_encode($lista);
 
@@ -20,8 +20,30 @@ require_once("config.php");
 //echo json_encode($Login);
 
 //carrega um usuário usando o login e a senha
+//$usuario = new Usuario();
+//$usuario->login("jose", "123456789");
+//echo $usuario;
+
+$aluno = new Usuario("aluno", "@lun0");
+/*
+//Criando um novo usuário
+$aluno->insert();
+echo $aluno;
+*/
+
+//Alterar um usuario
+/*$usuario = new Usuario();
+$usuario->loadByid(8);
+$usuario->update("professor", "!@#$%¨&*");
+echo $usuario;
+*/
+
 $usuario = new Usuario();
-$usuario->login("jose", "123456789");
+
+$usuario->loadByID(7);
+
+$usuario->delete();
+
 echo $usuario;
 
 ?>
