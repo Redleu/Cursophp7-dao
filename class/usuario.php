@@ -7,39 +7,48 @@ class Usuario {
 	private $dessenha;
 	private $dtcadastro;
 
-	public function getIdusuario(){
+	public function getIdusuario()
+	{
 		return $this->idusuario;
 	}
 
-	public function setIdusuario($value){
+	public function setIdusuario($value)
+	{
 		$this->idusuario = $value;
 	}
 
-public function getDeslogin(){
+public function getDeslogin()
+{
 		return $this->deslogin;
 	}
 
-	public function setDeslogin($value){
+	public function setDeslogin($value)
+	{
 		$this->deslogin = $value;
 	}
 
-	public function getDessenha(){
+	public function getDessenha()
+	{
 		return $this->dessenha;
 	}
 
-	public function setDessenha($value){
+	public function setDessenha($value)
+	{
 		$this->dessenha = $value;
 	}
 
-	public function getDtcadastro(){
+	public function getDtcadastro()
+	{
 		return $this->dtcadastro;
 	}
 
-	public function setDtcadastro($value){
+	public function setDtcadastro($value)
+	{
 		$this->dtcadastro = $value;
 	}
 
-public function loadById($id){
+public function loadById($id)
+	{
 
 	$sql = new Sql();
 
@@ -55,7 +64,8 @@ public function loadById($id){
 
 	}
 
-public static function getList(){
+public static function getList()
+	{
 
 	$sql = new Sql();
 
@@ -63,7 +73,8 @@ public static function getList(){
 
 	}
 
-	public static function search($Login){
+	public static function search($Login)
+		{
 
 		$sql = new Sql();
 
@@ -73,7 +84,8 @@ public static function getList(){
 
 	}
 
-public function login($login, $password){
+public function login($login, $password)
+{
 
 	$sql = new Sql();
 
@@ -101,7 +113,8 @@ public function login($login, $password){
 
 		}
 
-		public function setData($data){
+		public function setData($data)
+		{
 
 		$this->setIdusuario($data['idusuario']);
 		$this->setDeslogin($data['deslogin']);
@@ -110,7 +123,8 @@ public function login($login, $password){
 
 		}
 
-		public function insert(){
+		public function insert()
+		{
 
 			$sql = new Sql();
 
@@ -119,13 +133,15 @@ public function login($login, $password){
 
 				));
 
-			if (count($results) >0) {
+			if (count($results) >0) 
+			{
 				$this->setData($results[0]);
 			}
 
 		}
 
-		public function update($login, $password){
+		public function update($login, $password)
+		{
 
 			$this->setDeslogin($login);
 			$this->setDessenha($password);
@@ -139,7 +155,8 @@ public function login($login, $password){
 				));
 		}
 
-		public function delete(){
+		public function delete()
+		{
 
 			$sql = new Sql();
 
@@ -153,13 +170,15 @@ public function login($login, $password){
 			$this->setDtcadastro(new DateTime());
 		}
 
-	public function _construct($Login = "", $password = ""){
+	public function _construct($Login = "", $password = "")
+	{
 
 		$this->setDeslogin($login);
 		$this->setDessenha($password);
 	}	
 
-	public function __toString(){
+	public function __toString()
+	{
 
 	return json_encode(array(
 
