@@ -2,48 +2,48 @@
 
 require_once("config.php");
 
-//$sql = new Sql();
-//$usuarios = $sql->select("SELECT *FROM tb_usuarios");
-//echo json_encode($usuarios);
+//Tabela
+/*$sql = new Sql();
+$usuarios = $sql->select("SELECT * FROM tb_usuarios");
+echo json_encode($usuarios);*/
 
-//carrega um usuário
-//$root = new Usuario(); //erro//
-//$root->loadbyID(1);
+//Carrega um usuário
+//$root = new Usuario();
+//$root->loadbyId(4);
 //echo $root;
 
-//carrega uma lista de usuários
+//Carrega uma lista de usuários
 //$lista = Usuario::getList();
 //echo json_encode($lista);
 
 //Carrega uma lista de usuários buscando pelo login
-//$Search = Usuario::search("jose");
-//echo json_encode($Login);
+//$search = Usuario::search("jo");
+//echo json_encode($search);
 
-//carrega um usuário usando o login e a senha
+//Carrega um usuário usando o login e a senha
 //$usuario = new Usuario();
-//$usuario->login("jose", "123456789");
+//$usuario->login("joão", "1234");
 //echo $usuario;
 
-$aluno = new Usuario("aluno", "@lun0");
-/*
 //Criando um novo usuário
+/*$aluno = new Usuario("Marcio", "çlkjg");
 $aluno->insert();
 echo $aluno;
 */
 
-//Alterar um usuario
-/*$usuario = new Usuario();
-$usuario->loadByid(8);
-$usuario->update("professor", "!@#$%¨&*");
+/*
+//Alterar um usuário
+$usuario = new Usuario();
+$usuario->loadbyId(18);
+$usuario->update("Amadeu", "##@@");
 echo $usuario;
 */
 
+//Deleta um usuario
 $usuario = new Usuario();
-
-$usuario->loadByID(7);
-
+$usuario->loadbyId(20);
 $usuario->delete();
-
 echo $usuario;
+
 
 ?>
